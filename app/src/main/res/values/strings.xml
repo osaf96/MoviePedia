@@ -1,5 +1,35 @@
 <resources>
+
+    <string name="url_base_youtube" translatable="false">https://www.youtube.com/watch?v=</string>
+    <string name="url_base_youtube_video_tmhb" translatable="false">https://img.youtube.com/vi/</string>
+    <string name="url_part_reviews" translatable="false">/reviews?api_key=</string>
+    <string name="url_base_movie" translatable="false">https://api.themoviedb.org/3/movie/</string>
+    <string name="url_part_trailer" translatable="false">/videos?api_key=</string>
+
+
+    <string name="title">Title</string>
+    <string name="fetch_movie_key" translatable="false">sortKey</string>
+    <string name="error_loading_data">\nError getting data:-)</string>
+    <string name="sort_by_item">Sort By</string>
+    <string name="popularity_item">Popular</string>
+    <string name="fetch_movie_list_title">Fetch Movies By</string>
+    <string name="fetch_favorites" translatable="false">favorites</string>
+    <string name="rating_item">Top Rated</string>
     <string name="app_name">MoviePedia</string>
     <string name="parcel_movie">PARCEL_MOVIE</string>
-    <string name="tmdb_sort_pop_desc">popularity.desc</string>
+    <string name="error_loading">Error loading</string>
+    <string name="heading_vote_average">Vote Average</string>
+    <string name="heading_release_date">Release Date</string>
+    <string name="description_movie_poster">Contains poster of movie</string>
+    <string name="example_date">31-1-2018</string>
+    <string name="vote_average">8.2/10</string>
+    <string name="share">Share movie</string>
+    <string name="share_text">Have you watched</string>
+    <string name="example_title">Beauty And the Beast</string>
+    <string name="example_overview">A live action adaption of Disney\'s version of the classic tale of a cursed prince and a beautiful young woman who helps him break the spell</string>
+
+
+    <string name="movie_detail_Key" translatable="false">movie</string>
+    <string name="scroll_position_key" translatable="false">"scrollPosition"</string>
+    <string name="recycler_position_key" translatable="false">"recyclerPosition"</string>
 </resources>

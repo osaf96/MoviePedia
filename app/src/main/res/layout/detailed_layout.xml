@@ -1,0 +1,217 @@
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.osaf.root.moviepedia.DetailActivity"
+    tools:showIn="@layout/activity_detail_fragment"
+    android:id="@+id/scroll_view">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        tools:context="com.osaf.root.moviepedia.DetailActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            android:orientation="horizontal"
+            android:weightSum="5">
+
+            <ImageView
+                android:id="@+id/poster_IV"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3"
+                android:src="@drawable/images"
+                tools:contentDescription="@string/description_movie_poster" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/paddingEnd"
+                android:paddingLeft="@dimen/paddingLeft"
+                android:paddingRight="@dimen/paddingRight"
+                android:paddingStart="@dimen/paddingStart">
+
+                <TextView
+                    android:id="@+id/main_title_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title"
+                    android:textSize="@dimen/text_size_for_label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/title_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_title"
+                    android:textSize="@dimen/text_size_for_TV" />
+
+                <TextView
+                    android:id="@+id/releasedate_title_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/heading_release_date"
+                    android:textSize="@dimen/text_size_for_label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/relaesedate_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/paddingEnd"
+                    android:paddingRight="@dimen/paddingRight"
+                    android:text="@string/example_date"
+                    android:textSize="@dimen/text_size_for_TV" />
+
+                <TextView
+                    android:id="@+id/vote_title_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/heading_vote_average"
+                    android:textSize="@dimen/text_size_for_label"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/vote_TV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingEnd="@dimen/paddingEnd"
+                    android:paddingRight="@dimen/paddingRight"
+                    android:text="@string/vote_average"
+                    android:textSize="@dimen/text_size_for_TV" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="5dp"
+                android:paddingTop="10dp"
+                android:text="Synopsis"
+                android:textSize="@dimen/text_size_for_label"
+                android:textStyle="bold"/>
+
+
+            <TextView
+                android:id="@+id/overview_TV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/example_overview" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Trailers"
+            android:paddingBottom="5dp"
+            android:paddingTop="10dp"
+            android:textSize="@dimen/text_size_for_label"
+            android:paddingLeft="20dp"
+            android:textStyle="bold"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/detail_trailers_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                />
+
+            <ProgressBar
+                android:id="@+id/loading_trailers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/textview_error_trailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/sad_icon"
+                android:text="@string/error_loading"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Reviews"
+        android:textSize="@dimen/text_size_for_label"
+        android:textStyle="bold"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="200dp"
+            >
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/detail_reviews_recycler"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                />
+
+            <ProgressBar
+                android:id="@+id/loading_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="invisible"
+                />
+
+            <TextView
+                android:id="@+id/textview_error_reviews"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_centerInParent="true"
+                android:drawableTop="@drawable/sad_icon"
+                android:text="@string/error_loading"
+                android:visibility="invisible"
+                />
+
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+
+
+</android.support.v4.widget.NestedScrollView>
